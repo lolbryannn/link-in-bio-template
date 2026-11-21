@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Link in Bio</title>
+  <meta name="description" content="Semua link saya di satu tempat.">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Cpath d='M26 38l12-12M24 30l-4 4a6 6 0 0 0 8.5 8.5l4-4M40 34l4-4a6 6 0 0 0-8.5-8.5l-4 4' stroke='%23fff' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <!--
+  ============================================================
+   LINK IN BIO — template gratis oleh Bryan (@lolbryannn)
+   Free template by Bryan (@lolbryannn)
+
+   CARA PAKAI / HOW TO USE
+   1. Ubah isi PAGE di bawah (cari "EDIT DI SINI").
+      Edit the PAGE settings below (look for "EDIT HERE").
+   2. Buka file ini di browser untuk cek.
+      Open this file in a browser to check it.
+   3. Unggah ke Netlify / GitHub Pages / Vercel (gratis).
+      Upload to Netlify / GitHub Pages / Vercel (free).
+
+   Tidak perlu framework, server, atau install apa pun.
+   No framework, server or installs needed.
+  ============================================================
+  -->
+  <style>
+    /* ---------- Themes (pilih di PAGE.theme / choose in PAGE.theme) ---------- */
+    :root, [data-theme="midnight"] {
+      --bg: #0b0c10; --bg-2: #14161d; --card: #171a22; --card-hover: #1e222c;
+      --line: #262a35; --text: #f1f3f7; --muted: #9aa1b1; --accent: #8b7bff; --accent-ink: #fff;
+      --glow: rgba(139, 123, 255, .35);
+    }
+    [data-theme="paper"] {
+      --bg: #f6f3ee; --bg-2: #ece7df; --card: #ffffff; --card-hover: #fbf9f6;
+      --line: #e2dbd0; --text: #1d1b18; --muted: #6f685e; --accent: #e8572a; --accent-ink: #fff;
+      --glow: rgba(232, 87, 42, .25);
+    }
+    [data-theme="neon"] {
+      --bg: #050505; --bg-2: #0d0f0a; --card: #10130c; --card-hover: #161b0f;
+      --line: #2a3320; --text: #f2ffe0; --muted: #9bb07d; --accent: #b8ff3c; --accent-ink: #0b0e05;
+      --glow: rgba(184, 255, 60, .35);
+    }
+    [data-theme="peach"] {
+      --bg: #ffe9df; --bg-2: #ffd9c9; --card: #fff6f1; --card-hover: #ffffff;
+      --line: #f6c9b4; --text: #3a2119; --muted: #8a5b4b; --accent: #ff6f61; --accent-ink: #fff;
+      --glow: rgba(255, 111, 97, .3);
+    }
+    [data-theme="ocean"] {
+      --bg: #06141f; --bg-2: #0a2232; --card: #0d2a3d; --card-hover: #123550;
+      --line: #1a4560; --text: #e6f6ff; --muted: #8fb7cc; --accent: #2ed3c6; --accent-ink: #032024;
+      --glow: rgba(46, 211, 198, .3);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; min-height: 100vh; min-height: 100dvh;
+      background: radial-gradient(120% 70% at 50% -10%, var(--bg-2) 0%, var(--bg) 60%) fixed, var(--bg);
+      color: var(--text);
+      font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      display: flex; justify-content: center;
+      padding: max(28px, env(safe-area-inset-top)) 16px max(28px, env(safe-area-inset-bottom));
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 12px; }
+    .page { width: 100%; max-width: 480px; display: flex; flex-direction: column; align-items: center; }
+
+    /* top bar */
+    .top { width: 100%; display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .icon-btn {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: var(--card); border: 1px solid var(--line);
+    }
+    .icon-btn:hover { background: var(--card-hover); }
+    .icon-btn svg { width: 18px; height: 18px; }
+
+    /* profile */
+    .avatar {
+      width: 104px; height: 104px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+      display: grid; place-items: center; font-size: 38px; font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--bg-2));
+      color: var(--accent-ink); border: 3px solid var(--card);
+      box-shadow: 0 0 0 1px var(--line), 0 12px 40px var(--glow);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    h1 { margin: 16px 0 4px; font-size: 22px; letter-spacing: -.01em; text-align: center; display: flex; align-items: center; gap: 6px; }
+    h1 .verified { width: 18px; height: 18px; color: var(--accent); }
+    .handle { color: var(--muted); font-size: 14px; }
+    .bio { color: var(--muted); text-align: center; margin: 10px 0 0; max-width: 36ch; white-space: pre-line; }
+    .status {
+      margin-top: 12px; display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; padding: 5px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--line);
+    }
+    .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #2ecc71; box-shadow: 0 0 8px #2ecc71; }
+
+    /* socials */
+    .socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 18px 0 6px; padding: 0; list-style: none; }
+    .socials a {
+      width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--card); border: 1px solid var(--line); transition: transform .15s, background .15s;
+    }
+    .socials a:hover { transform: translateY(-2px); background: var(--card-hover); }
+    .socials svg { width: 20px; height: 20px; }
+
+    /* links */
+    .links { width: 100%; display: flex; flex-direction: column; gap: 12px; margin: 18px 0 0; padding: 0; list-style: none; }
+    .section-title { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin: 14px 4px 0; text-align: center; }
+    .link {
+      position: relative; display: flex; align-items: center; gap: 14px; min-height: 62px;
+      padding: 10px 16px 10px 10px; border-radius: 18px;
+      background: var(--card); border: 1px solid var(--line);
+      transition: transform .15s, background .15s, border-color .15s;
+    }
+    .link:hover { transform: translateY(-2px); background: var(--card-hover); border-color: var(--accent); }
+    .link:active { transform: scale(.98); }
+    .link .ico {
+      width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0; display: grid; place-items: center;
+      background: var(--bg-2); color: var(--text);
+    }
+    .link .ico svg { width: 21px; height: 21px; }
+    .link .ico img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+    .link .txt { flex: 1; min-width: 0; }
+    .link .t { display: block; font-weight: 600; line-height: 1.3; }
+    .link .s { display: block; font-size: 13px; color: var(--muted); line-height: 1.35; margin-top: 1px; }
+    .link .arr { color: var(--muted); flex-shrink: 0; font-size: 18px; }
+    .link.hl { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: 0 10px 30px var(--glow); }
+    .link.hl .s, .link.hl .arr { color: inherit; opacity: .8; }
+    .link.hl .ico { background: rgba(255,255,255,.18); color: inherit; }
+    .link .badge {
+      position: absolute; top: -9px; right: 14px; font-size: 11px; font-weight: 700; letter-spacing: .04em;
+      padding: 2px 8px; border-radius: 999px; background: var(--text); color: var(--bg);
+    }
+
+    footer { margin-top: 34px; font-size: 12px; color: var(--muted); text-align: center; }
+    footer a { text-decoration: underline; text-underline-offset: 2px; }
+
+    /* toast */
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 16px); opacity: 0;
+      background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 12px; font-size: 14px;
+      transition: .25s; pointer-events: none; z-index: 10;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    /* demo theme switcher (only shows with ?demo in the URL) */
+    .demo {
+      position: fixed; left: 50%; top: 10px; transform: translateX(-50%); z-index: 20;
+      display: flex; gap: 6px; padding: 6px; border-radius: 999px;
+      background: rgba(0,0,0,.65); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    }
+    .demo button { border: 0; padding: 6px 10px; border-radius: 999px; background: transparent; color: #fff; font-size: 12px; }
+    .demo button[aria-pressed="true"] { background: #fff; color: #000; font-weight: 600; }
+    body.has-demo { padding-top: 64px; }
+
+    /* entrance animation */
+    .rise { opacity: 0; transform: translateY(10px); animation: rise .5s ease forwards; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+      .rise { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="page"></main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+  /* ================================================================
+     EDIT DI SINI  /  EDIT HERE
+     ================================================================ */
+  const PAGE = {
+    name: "Nama Kamu",                 // your name or brand
+    handle: "@usernamekamu",           // optional
+    verified: false,                   // show a check mark next to the name
+    avatar: "",                        // photo URL or file, e.g. "foto.jpg" — empty = initials
+    bio: "Kreator konten & pemilik toko kecil.\nSemua link ada di bawah 👇",
+    status: "Open order hari ini",     // small pill under the bio — "" to hide
+
+    // Theme: "midnight" | "paper" | "neon" | "peach" | "ocean"
+    theme: "midnight",
+    accent: "",                        // optional custom colour, e.g. "#ff3d81"
+
+    // Social icons row (icon is detected from the link automatically)
+    socials: [
+      "https://www.instagram.com/",
+      "https://www.tiktok.com/",
+      "https://www.youtube.com/",
+      "https://wa.me/6281234567890"
+    ],
+
+    // Main buttons. Optional fields:
+    //   sub: small text under the title     highlight: true = coloured button
+    //   badge: "BARU" / "NEW"               icon: "instagram" | "tiktok" | "youtube" | "whatsapp" |
+    //   section: "Title" = heading above        "shop" | "email" | "music" | "github" | "x" | "facebook" |
+    //   image: thumbnail instead of an icon     "link" | "gift" | "calendar" | "map" | "download"
+    links: [
+      { title: "Pesan via WhatsApp", sub: "Fast response jam 09.00–21.00", url: "https://wa.me/6281234567890?text=Halo%2C%20saya%20mau%20pesan", highlight: true },
+      { title: "Katalog produk", sub: "Lihat semua produk & harga", url: "https://example.com", icon: "shop", badge: "BARU" },
+      { title: "Toko Shopee", url: "https://shopee.co.id/", icon: "shop" },
+      { title: "Video terbaru", sub: "Tutorial minggu ini", url: "https://www.youtube.com/", section: "Konten" },
+      { title: "Freebies & template", sub: "Gratis, tinggal unduh", url: "https://example.com", icon: "gift" },
+      { title: "Lokasi toko", url: "https://maps.google.com/", icon: "map", section: "Info" },
+      { title: "Email kerja sama", url: "mailto:halo@example.com" }
+    ],
+
+    footer: "© 2026 Nama Kamu",        // "" to hide
+    credit: true                       // small "template by @lolbryannn" line — thanks for keeping it! 🙏
+  };
+  /* ================================================================
+     Selesai. Kamu tidak perlu mengubah apa pun di bawah ini.
+     Done. You don't need to change anything below.
+     ================================================================ */
+
+  (function () {
+    "use strict";
+
+    const ICONS = {
+      instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg>',
+      tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.2 1.6 3.7 3.9 3.9v3.1c-1.4.1-2.7-.3-3.9-1v6.2c0 4-3.3 6.3-6.4 5.6-4.2-.9-5.3-6.3-1.9-8.7 1-.7 2.3-1 3.6-.9v3.2c-.4-.1-.8-.1-1.2 0-1.6.4-2 2.6-.6 3.4 1.3.8 3.3 0 3.3-2V3h3.2z"/></svg>',
+      youtube: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8zM10 15V9l5.2 3L10 15z"/></svg>',
+      whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>',
+      x: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.3L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg>',
+      facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.6v3.6h2.7V22H14v-9.9h2.7l.4-3.6H14z"/></svg>',
+      github: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>',
+      shop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14l-1 13H6L5 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>',
+      email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+      music: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+      gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>',
+      calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>',
+      map: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+      download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>',
+      link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>',
+      share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>',
+      check: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.4 1.8 3 .1 1 2.8 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-1 2.8-3 .1L12 22.5l-2.4-1.8-3-.1-1-2.8-2.4-1.8.9-2.9-.9-2.9 2.4-1.8 1-2.8 3-.1L12 1.5zm-1.3 13.6 5.3-5.3-1.4-1.4-3.9 3.9-1.9-1.9-1.4 1.4 3.3 3.3z"/></svg>'
+    };
+    const NAMES = { instagram: "Instagram", tiktok: "TikTok", youtube: "YouTube", whatsapp: "WhatsApp", x: "X", facebook: "Facebook", github: "GitHub", email: "Email", music: "Music", shop: "Shop", link: "Link" };
+
+    function detect(url) {
+      const u = String(url).toLowerCase();
+      if (u.startsWith("mailto:")) return "email";
+      if (/instagram\.com/.test(u)) return "instagram";
+      if (/tiktok\.com/.test(u)) return "tiktok";
+      if (/youtube\.com|youtu\.be/.test(u)) return "youtube";
+      if (/wa\.me|whatsapp\.com/.test(u)) return "whatsapp";
+      if (/(^|\/\/|\.)(x|twitter)\.com/.test(u)) return "x";
+      if (/facebook\.com|fb\.com/.test(u)) return "facebook";
+      if (/github\.com/.test(u)) return "github";
+      if (/spotify\.com|music\.apple|soundcloud/.test(u)) return "music";
+      if (/shopee|tokopedia|lazada|tiktokshop|bukalapak|blibli/.test(u)) return "shop";
+      if (/maps\.google|goo\.gl\/maps|maps\.app/.test(u)) return "map";
+      return "link";
+    }
+    function esc(s) {
+      return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+    }
+    function safe(url) {
+      const s = String(url || "").trim();
+      return /^(https?:|mailto:|tel:|#)/i.test(s) || /^[\w./-]+$/.test(s) ? s : "#";
+    }
+    function external(url) { return /^https?:/i.test(url); }
+    function initials(name) {
+      return String(name || "?").trim().split(/\s+/).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+    }
+
+    function toast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg; t.classList.add("show");
+      clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 1800);
+    }
+
+    function render(theme) {
+      document.documentElement.dataset.theme = theme;
+      if (PAGE.accent) document.documentElement.style.setProperty("--accent", PAGE.accent);
+      document.title = PAGE.name + (PAGE.handle ? " (" + PAGE.handle + ")" : "");
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.content = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
+
+      let d = 0;
+      const delay = () => `style="animation-delay:${(d++ * 0.05).toFixed(2)}s"`;
+
+      const avatar = PAGE.avatar
+        ? `<img src="${esc(safe(PAGE.avatar))}" alt="${esc(PAGE.name)}">`
+        : esc(initials(PAGE.name));
+
+      const socials = (PAGE.socials || []).map(u => {
+        const k = detect(u);
+        return `<li><a href="${esc(safe(u))}" ${external(u) ? 'target="_blank" rel="noopener"' : ""} aria-label="${esc(NAMES[k] || k)}">${ICONS[k] || ICONS.link}</a></li>`;
+      }).join("");
+
+      const links = (PAGE.links || []).map(l => {
+        const k = l.icon && ICONS[l.icon] ? l.icon : detect(l.url);
+        const ico = l.image ? `<img src="${esc(safe(l.image))}" alt="">` : (ICONS[k] || ICONS.link);
+        const section = l.section ? `<li class="section-title rise" ${delay()}>${esc(l.section)}</li>` : "";
+        return `${section}<li class="rise" ${delay()}>
+          <a class="link${l.highlight ? " hl" : ""}" href="${esc(safe(l.url))}" ${external(l.url) ? 'target="_blank" rel="noopener"' : ""}>
+            ${l.badge ? `<span class="badge">${esc(l.badge)}</span>` : ""}
+            <span class="ico" aria-hidden="true">${ico}</span>
+            <span class="txt"><span class="t">${esc(l.title)}</span>${l.sub ? `<span class="s">${esc(l.sub)}</span>` : ""}</span>
+            <span class="arr" aria-hidden="true">›</span>
+          </a></li>`;
+      }).join("");
+
+      document.getElementById("page").innerHTML = `
+        <div class="top"><button class="icon-btn" type="button" id="share" aria-label="Share">${ICONS.share}</button></div>
+        <div class="avatar rise" ${delay()}>${avatar}</div>
+        <h1 class="rise" ${delay()}>${esc(PAGE.name)}${PAGE.verified ? `<span class="verified" aria-label="verified">${ICONS.check}</span>` : ""}</h1>
+        ${PAGE.handle ? `<div class="handle rise" ${delay()}>${esc(PAGE.handle)}</div>` : ""}
+        ${PAGE.bio ? `<p class="bio rise" ${delay()}>${esc(PAGE.bio)}</p>` : ""}
+        ${PAGE.status ? `<div class="status rise" ${delay()}>${esc(PAGE.status)}</div>` : ""}
+        ${socials ? `<ul class="socials rise" ${delay()}>${socials}</ul>` : ""}
+        <ul class="links">${links}</ul>
+        <footer>
+          ${PAGE.footer ? `<div>${esc(PAGE.footer)}</div>` : ""}
+          ${PAGE.credit ? `<div>template by <a href="https://www.instagram.com/lolbryannn/" target="_blank" rel="noopener">@lolbryannn</a></div>` : ""}
+        </footer>`;
+
+      document.getElementById("share").addEventListener("click", async () => {
+        const data = { title: document.title, url: location.href };
+        if (navigator.share) { try { await navigator.share(data); return; } catch (e) { if (e && e.name === "AbortError") return; } }
+        try { await navigator.clipboard.writeText(location.href); toast("Link disalin / Link copied ✓"); }
+        catch (e) { toast(location.href); }
+      });
+    }
+
+    // Demo mode: add ?demo to the URL to show a theme switcher.
+    const params = new URLSearchParams(location.search);
+    const themes = ["midnight", "paper", "neon", "peach", "ocean"];
+    let theme = themes.includes(params.get("theme")) ? params.get("theme") : (themes.includes(PAGE.theme) ? PAGE.theme : "midnight");
+    render(theme);
+
+    if (params.has("demo")) {
+      document.body.classList.add("has-demo");
+      const bar = document.createElement("div");
+      bar.className = "demo"; bar.setAttribute("role", "group"); bar.setAttribute("aria-label", "Theme");
+      bar.innerHTML = themes.map(t => `<button type="button" data-t="${t}" aria-pressed="${t === theme}">${t}</button>`).join("");
+      bar.addEventListener("click", e => {
+        const b = e.target.closest("button"); if (!b) return;
+        theme = b.dataset.t;
+        bar.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.t === theme)));
+        render(theme);
+      });
+      document.body.appendChild(bar);
+    }
+  })();
+  </script>
+</body>
+</html>
